@@ -1,0 +1,198 @@
+/* ------------------ global css --------------------*/
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+}
+
+html { 
+    background: url(https://thumbs.gfycat.com/ConfusedMetallicBellfrog-size_restricted.gif) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Add this CSS to your existing styles */
+.parent {
+    display: flex;
+}
+
+.left-side {
+    flex: 1; /* Takes up remaining space to push the right-side to the right */
+}
+
+.right-side {
+    /* Adjust width and styling as needed */
+    width: 70%; /* You can adjust this value to control the width of the right side */
+    margin-left: auto;
+    overflow: hidden; /* Add this line to hide overflow content */
+}
+
+/*------------------- css for search div -----------------*/
+.search_div{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#search{
+    width: 180px;
+    height: 35px;
+    color: black;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px 0 0 5px;
+}
+input{
+    padding:2px 10px;
+}
+#btn{
+    background-color: gray;
+    border: none;
+    width: 70px;
+    border-radius: 0 5px 5px 0;
+}
+
+
+/*--------------------- css for main div ----------------*/
+.main{
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+
+/*-------------------- css for main0 div ---------------------*/
+.main0{
+    padding: 10px;
+}
+.city{
+    font-size: 30px;
+}
+.temp{
+    font-size: 40px;
+    display: flex;
+    width: 300px;
+    margin: auto;
+    margin-top: 10px;
+}
+#tmp_logo>img{
+    max-width: 80px;
+}
+#temp{
+    margin-top: 18px;
+}
+.env{
+    font-size: 25px;
+}
+
+
+/*----------------------- css for main1 div --------------------*/
+.main1{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 15px;
+}
+.visi{
+    margin-left: 20px;
+}
+
+
+/*------------------------ css for main2 div -------------------*/
+.main2{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+}
+.dew{
+    margin-left: 20px;
+}
+.day_card{
+    padding: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+
+/*----------------------- css for hour data --------------------*/
+/* .we_data{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+.hours_data{
+    display: flex;
+    overflow:auto;
+    gap: 10px;
+    margin: auto;
+    margin-top: 10px;
+}
+.day_card{
+    padding: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.day{
+    font-size: 20px;
+}
+.day_tmp{
+    font-size: 16px;
+    margin-top: 5px;
+}
+.weth_logo{
+    width: 35px;
+}
+.hour_weth{
+    font-size: 16px;
+}
+.wind{
+    font-size: 10px;
+} */
+
+
+/*-----------------------  css for week data ------------------------*/
+.week_div {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    flex: 1; /* This will make the weekly data take the available space */
+}
+
+.days_data {
+    display: flex;
+    flex-wrap: wrap; /* Allow the days to wrap to the next line if needed */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tmp_div{
+    display: flex;
+}
+.sun_div{
+    display: flex;
+    margin-top: 8px;
+}
+.sunset{
+    margin-left: 10px;
+}
+
+.min_temp{
+    font-size: 17px;
+    margin-left: 10px;
+}
+.max_temp{
+    font-size: 17px;
+}
+.weth{
+    font-size: 18px;
+    margin-top: 5px;
+}
+#today{
+    margin-top: 10px;
+}
+#tdy{
+    margin-top: 10px;
+}

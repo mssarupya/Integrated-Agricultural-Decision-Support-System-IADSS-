@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction and Fertilizer </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            margin: 0;
+            background-color: #e791a9;
+        }
+
+        .box {
+            width: 400px; /* Adjusted width */
+            padding: 15px;
+            border: 1px solid #07040423;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 15px; /* Rounded corners */
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .header {
+            text-align: left;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        label {
+            font-weight: bold; /* Make labels bold */
+            color: #333; /* Label text color */
+        }
+
+        input, select {
+            width: calc(100% - 22px); /* Adjusted width to fit within rounded borders */
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #df510f; /* Updated color for the button */
+            color: #fff; /* Text color for better visibility */
+            border: none;
+            border-radius: 8px; /* Rounded corners for the button */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c4460c; /* Darker color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Crop Prediction and Fertilizer</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqSudGIgIml3Ocxvmx43j_jJLXELeEZkVTmw&usqp=CAU">
+    </div>
+  
+    <div class="box">
+        <form method="POST" action="/predict">
+            <label for="district">District:</label>
+            <select name="district" id="district" onchange="updateSoilColorOptions()">
+                <option value="" disabled selected>Select district</option>
+                {% for option in district_options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <br>
+    
+            <label for="soil_color">Soil Color:</label>
+            <select name="soil_color" id="soil_color" onchange="updateOptions()">
+                <option value="" disabled selected>Select soil color</option>
+            </select>
+            <br>
+    
+            <label for="nitrogen">Nitrogen:</label>
+            <select name="nitrogen" id="nitrogen">
+                <option value="" disabled selected>Select nitrogen value</option>
+            </select>
+            <br>
+    
+            <label for="phosphorus">Phosphorus:</label>
+            <select name="phosphorus" id="phosphorus">
+                <option value="" disabled selected>Select phosphorus value</option>
+            </select>
+            <br>
+    
+            <label for="potassium">Potassium:</label>
+            <select name="potassium" id="potassium">
+                <option value="" disabled selected>Select potassium value</option>
+            </select>
+            <br>
+    
+            <label for="ph">pH:</label>
+            <select name="ph" id="ph">
+                <option value="" disabled selected>Select pH value</option>
+            </select>
+            <br>
+    
+            <label for="rainfall">Rainfall:</label>
+            <select name="rainfall" id="rainfall">
+                <option value="" disabled selected>Select rainfall value</option>
+            </select>
+            <br>
+    
+            <label for="temperature">Temperature:</label>
+            <select name="temperature" id="temperature">
+                <option value="" disabled selected>Select temperature value</option>
+            </select>
+            <br>
+    
+            <input type="submit" value="Submit" style="background-color: #df510f; color: #fff; border: none; border-radius: 8px; cursor: pointer;">
+        </form>
+    
+        <script>
+            function updateSoilColorOptions() {
+                var district = document.getElementById('district').value;
+        
+                // Fetch updated options from the server
+                fetch('/get_soil_colors/' + district)
+                .then(response => response.json())
+                .then(data => {
+                    // Update the options of the soil color select element
+                    var soilColorSelect = document.getElementById('soil_color');
+                    soilColorSelect.innerHTML = '<option value="" disabled selected>Select soil color</option>'; // Clear existing options
+        
+                    data.forEach(function(option) {
+                        var optionElement = document.createElement('option');
+                        optionElement.value = option;
+                        optionElement.text = option;
+                        soilColorSelect.add(optionElement);
+                    });
+                });
+            }
+        
+            function updateOptions() {
+                var district = document.getElementById('district').value;
+                var soilColor = document.getElementById('soil_color').value;
+        
+                // Fetch updated options from the server
+                fetch('/get_options/' + district + '/' + soilColor)
+                .then(response => response.json())
+                .then(data => {
+                    // Update the options of the other select elements
+                    updateSelectOptions('nitrogen', data.nitrogen);
+                    updateSelectOptions('phosphorus', data.phosphorus);
+                    updateSelectOptions('potassium', data.potassium);
+                    updateSelectOptions('ph', data.ph);
+                    updateSelectOptions('rainfall', data.rainfall);
+                    updateSelectOptions('temperature', data.temperature);
+                });
+            }
+        
+            function updateSelectOptions(selectId, options) {
+                var select = document.getElementById(selectId);
+                select.innerHTML = '<option value="" disabled selected>Select ' + selectId + ' value</option>'; // Clear existing options
+        
+                options.forEach(function(option) {
+                    var optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.text = option;
+                    select.add(optionElement);
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

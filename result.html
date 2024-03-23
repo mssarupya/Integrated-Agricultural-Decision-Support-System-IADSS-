@@ -1,0 +1,253 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+
+    <h1>Prediction Result:Crop and Fertilizer </h1><br>
+    <h2>Recommended Crop: {{ crop }}</h2><br>
+    <h2>Recommended Fertilizer: {{ fertilizer }}</h2><br>
+    <h2>Link: <a href="{{ link }}" target="_blank">{{ link }}</a></h2><br>
+
+    <img id="cropImage" alt="Recommended Crop Image">
+
+    <script>
+        var crop = "{{ crop }}".toLowerCase().trim();;
+        var cropImage = document.getElementById('cropImage');
+       
+        switch (crop) {
+            case 'sugarcane':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs78DUus22vPo0PXgoVsgL8zVCol0wDCQuHw&usqp=CAU";
+                break;
+            case 'jowar':
+                cropImage.src = "https://sahasa64.files.wordpress.com/2020/12/malgalwedha-jowar_14.09.2020-e1609304604817.jpg";
+                break;
+            case 'cotton':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMuT5BIYL3ZQAhj9UFNOo_5EkiTAWlIgBCRA&usqp=CAU";
+                break;
+            case 'rice':
+                cropImage.src = "https://images.cnbctv18.com/wp-content/uploads/2023/07/Rice-2.jpg";
+                break;
+            case 'wheat':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqFk9ZYTKkTz0kdF8ptr4yMFKsNZhWloR0IQ&usqp=CAU";
+                break;
+            case 'groundnut':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX4-OuVBESIfeRVCsFnLstkRLvDRAUpeSlGA&usqp=CAU";
+                break;
+            case 'maize':
+                cropImage.src = "https://plantix.net/en/library/assets/custom/crop-images/maize.jpeg"
+                break;
+            case 'tur':
+                cropImage.src = "https://5.imimg.com/data5/QH/UB/MY-48524887/paddy-rice-500x500.jpg"
+                break;
+            case 'urad':
+                cropImage.src = "https://www.bigbasket.com/media/uploads/p/l/40072500-6_3-bb-royal-organic-urad-dal-black-split.jpg"
+                break;
+            case 'moong':
+                cropImage.src = "https://www.poshtik.in/cdn/shop/products/com1807919906847Poshtik_Moong_dal.png?v=1626004323"
+                break;
+            case 'gram':
+                cropImage.src = "https://5.imimg.com/data5/NF/AL/MY-32438742/bengal-gram-500x500.jpg"
+                break;
+            case 'masoor':
+                cropImage.src = "https://goodness-farm.com/wp-content/uploads/2023/03/red-masoor-dal-500x500-1.webp"
+                break;
+            case 'soybean':
+                cropImage.src = "https://5.imimg.com/data5/SI/VC/MY-21496561/soybean-seeds.jpg"
+                break;
+            case 'ginger':
+                cropImage.src = "https://sahebinternational.in/wp-content/uploads/2022/07/Ginger.jpg"
+                break;
+            case 'turmeric':
+                cropImage.src = "https://dqt8gd4elnkw6.cloudfront.net/image/Benefits-of-turmeric-for-your-skin-2.jpg"
+                break;
+            case 'grapes':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo1UoMlA7epnjrpADOhvV1CRpFNfxmb3IiMQ&usqp=CAU";
+                break;
+            
+            // Add cases for other crops
+            default:
+                cropImage.src = 'agriculture.jpg'; // Provide a default image or leave it empty
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <div class="parent">
+    <div class="left-side">
+        <!-- Your existing crop-related content goes here -->
+   
+    <h1>Prediction Result: </h1><br>
+    <h2>Recommended Crop: {{ crop }}</h2><br>
+    <h2>Recommended Fertilizer: {{ fertilizer }}</h2><br>
+    <h2>Link: <a href="{{ link }}" target="_blank">{{ link }}</a></h2><br>
+
+    <img id="cropImage" alt="Recommended Crop Image" style="width: 420px; height: 400px;">
+
+    <script>
+        var crop = "{{ crop }}".toLowerCase().trim();;
+        var cropImage = document.getElementById('cropImage');
+       
+        switch (crop) {
+            case 'sugarcane':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs78DUus22vPo0PXgoVsgL8zVCol0wDCQuHw&usqp=CAU";
+                break;
+            case 'jowar':
+                cropImage.src = "https://sahasa64.files.wordpress.com/2020/12/malgalwedha-jowar_14.09.2020-e1609304604817.jpg";
+                break;
+            case 'cotton':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMuT5BIYL3ZQAhj9UFNOo_5EkiTAWlIgBCRA&usqp=CAU";
+                break;
+            case 'rice':
+                cropImage.src = "https://img.freepik.com/free-photo/sack-rice-seed-with-white-rice-small-wooden-spoon-rice-plant_1150-35744.jpg";
+                break;
+            case 'wheat':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqFk9ZYTKkTz0kdF8ptr4yMFKsNZhWloR0IQ&usqp=CAU";
+                break;
+            case 'groundnut':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX4-OuVBESIfeRVCsFnLstkRLvDRAUpeSlGA&usqp=CAU";
+                break;
+            case 'maize':
+                cropImage.src = "https://plantix.net/en/library/assets/custom/crop-images/maize.jpeg"
+                break;
+            case 'tur':
+                cropImage.src = "https://5.imimg.com/data5/QH/UB/MY-48524887/paddy-rice-500x500.jpg"
+                break;
+            case 'urad':
+                cropImage.src = "https://www.bigbasket.com/media/uploads/p/l/40072500-6_3-bb-royal-organic-urad-dal-black-split.jpg"
+                break;
+            case 'moong':
+                cropImage.src = "https://origin.club/media/catalog/product/cache/86eaafd287624d270d87c663dd3976d5/m/o/moong_dal_2__2.jpg"
+                break;
+            case 'gram':
+                cropImage.src = "https://5.imimg.com/data5/NF/AL/MY-32438742/bengal-gram-500x500.jpg"
+                break;
+            case 'masoor':
+                cropImage.src = "https://goodness-farm.com/wp-content/uploads/2023/03/red-masoor-dal-500x500-1.webp"
+                break;
+            case 'soybean':
+                cropImage.src = "https://5.imimg.com/data5/SI/VC/MY-21496561/soybean-seeds.jpg"
+                break;
+            case 'ginger':
+                cropImage.src = "https://cdn.britannica.com/19/231119-050-35483892/Indian-ginger-Zingiber-officinale.jpg"
+                break;
+            case 'turmeric':
+                cropImage.src = "https://dqt8gd4elnkw6.cloudfront.net/image/Benefits-of-turmeric-for-your-skin-2.jpg"
+                break;
+            case 'grapes':
+                cropImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo1UoMlA7epnjrpADOhvV1CRpFNfxmb3IiMQ&usqp=CAU";
+                break;
+            
+            // Add cases for other crops
+            default:
+                cropImage.src = 'agriculture.jpg'; // Provide a default image or leave it empty
+        }
+    </script>
+    
+
+     <img id="fertilizerImage" alt="Recommended Fertilizer Image" style="width: 450px; height: 400px;">
+
+     <script>
+        var fertilizer = "{{ fertilizer }}".toLowerCase().trim();
+        var fertilizerImage = document.getElementById('fertilizerImage');
+    
+        // Handle cases with numeric values and spaces    
+  
+        switch (fertilizer) {
+            case 'urea':
+                fertilizerImage.src = "https://gogarden.co.in/cdn/shop/files/71yg6hRnpTL._SL1200_fac2b8e7-208b-482d-9493-07d03daaff6f.jpg?v=1684132066";
+                break;
+            case 'dap':
+                fertilizerImage.src = "https://m.media-amazon.com/images/I/713+fXLmLpL._AC_UF894,1000_QL80_.jpg";
+                break;
+            case 'mop':
+                fertilizerImage.src = "https://www.coromandel.biz/wp-content/uploads/2021/06/gromor_mop_big.png";
+                break;
+            case '10:26:26 npk':
+                fertilizerImage.src = "https://ircagro.com/wp-content/uploads/2020/11/Paras-NPK-102626-192x300.jpg";
+                break;
+            case 'ssp':
+                fertilizerImage.src = "https://images.meesho.com/images/products/301219132/gd5ev_512.webp";
+                break;
+            case 'magnesium sulphate':
+                fertilizerImage.src = "https://5.imimg.com/data5/SELLER/Default/2020/9/ZH/UV/PB/3029329/magnesium-sulphate-fertilizer.jpg";
+                break;
+            case '13:32:26 npk':
+                fertilizerImage.src = "https://vcngroup.org/wp-content/uploads/2019/08/13-5-26-25kg.png";
+                break;
+            case '12:32:16 npk':
+                fertilizerImage.src = "https://www.eraithu.in/cdn/shop/products/FBIFC002A-4.png?v=1673264915";
+                break;
+            case '50:26:26 npk':
+                fertilizerImage.src = "https://iffco-public-assets.s3.ap-south-1.amazonaws.com/s3fs-public/2020-06/10-26-26-%28NPK%29.png";
+                break;
+             case '19:19:19 npk':
+                fertilizerImage.src = "https://www.katyayaniorganics.com/wp-content/uploads/2022/06/01.png";
+                break;
+            case 'chilated micronutrient':
+                fertilizerImage.src = "https://image.made-in-china.com/202f0j00DKPhTdpyblot/Chelated-100-Watersoluble-Micronutrient-Foliar-Fertilizer-Powder.jpg";
+                break;
+            case '18:46:00 npk':
+                fertilizerImage.src = "https://5.imimg.com/data5/ANDROID/Default/2022/5/KI/NZ/OA/49437380/product-jpeg-500x500.jpg";
+                break;
+             case 'sulphur':
+                fertilizerImage.src = "https://cdn.shopify.com/s/files/1/0722/2059/products/Liquid_Sulphur-min.png?v=1601732979";
+                break;
+            case '20:20:20 npk':
+                fertilizerImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1M5ynKOZWQy0OOQMxKJnnSCMmsxY5QtLgQ&usqp=CAU";
+                break;
+            case 'ammonium sulphate':
+                fertilizerImage.src = "https://5.imimg.com/data5/LY/QP/MY-998144/ammonium-sulphate-fertilizer-500x500.png";
+                break;
+            case 'ferrous sulphate':
+                fertilizerImage.src = "https://5.imimg.com/data5/SELLER/Default/2022/1/AR/TL/PN/57647323/ferrous-sulphate-500x500.jpeg";
+                break;
+            case 'white potash':
+                fertilizerImage.src = "https://5.imimg.com/data5/SELLER/Default/2023/5/306579701/NK/KE/PL/2389997/exsol-white-potash-0-0-50.jpeg";
+                break;
+            case '10:10:10 npk':
+                fertilizerImage.src = "https://m.media-amazon.com/images/I/71IIybca1AL.jpg";
+                break;
+            case 'hydrated lime':
+                fertilizerImage.src = "https://m.media-amazon.com/images/I/61rydVQOR0L._AC_UF894,1000_QL80_.jpg";
+                break;
+            // Add cases for other fertilizers...
+            default:
+                fertilizerImage.src = 'default-fertilizer-image.jpg'; // Provide a default image or leave it empty
+        }
+    </script>
+     
+        
+        </div>
+
+ <div class="right-side">
+    {% include 'weather.html' %}
+</div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+  
+</body>
+</html>
+
+
+
